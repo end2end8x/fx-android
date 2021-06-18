@@ -171,8 +171,8 @@ public class IMOkHttpRequestManager {
             Call newCall = this.mOkHttpClient.newCall(addHeaders().url(String.format("%s?%s", new Object[]{str, sb.toString()})).build());
             newCall.enqueue(new Callback() {
                 public void onFailure(Call call, IOException iOException) {
-                    IMOkHttpRequestManager.this.failedCallBack(iOException.toString(), reqCallBack);
-                    Logx.e(IMOkHttpRequestManager.TAG + iOException.toString());
+                    IMOkHttpRequestManager.this.failedCallBack(iOException.getMessage(), reqCallBack);
+                    Logx.e(IMOkHttpRequestManager.TAG + iOException.getMessage());
                 }
 
                 public void onResponse(Call call, Response response) throws IOException {
@@ -219,8 +219,8 @@ public class IMOkHttpRequestManager {
             Call newCall = this.mOkHttpClient.newCall(new Request.Builder().addHeader(HttpHeaders.AUTHORIZATION, "Bearer " + ChatLoginController.getInstance().getIMAccessToken()).addHeader("BasicData", "1," + Build.VERSION.RELEASE + ",1," + AboutController.getAppVersion(MyApplication.getInstance())).addHeader(HttpHeaders.CONTENT_TYPE, "application/json").url(String.format("%s?%s", new Object[]{str, sb.toString()})).build());
             newCall.enqueue(new Callback() {
                 public void onFailure(Call call, IOException iOException) {
-                    IMOkHttpRequestManager.this.failedCallBack(iOException.toString(), reqCallBack);
-                    Logx.e(IMOkHttpRequestManager.TAG + iOException.toString());
+                    IMOkHttpRequestManager.this.failedCallBack(iOException.getMessage(), reqCallBack);
+                    Logx.e(IMOkHttpRequestManager.TAG + iOException.getMessage());
                 }
 
                 public void onResponse(Call call, Response response) throws IOException {
@@ -258,7 +258,7 @@ public class IMOkHttpRequestManager {
             Call newCall = this.mOkHttpClient.newCall(addHeaders().url(String.format("%s?%s", new Object[]{str, sb.toString()})).build());
             newCall.enqueue(new Callback() {
                 public void onFailure(Call call, IOException iOException) {
-                    IMOkHttpRequestManager.this.failedCallBack(iOException.toString(), reqCallBack);
+                    IMOkHttpRequestManager.this.failedCallBack(iOException.getMessage(), reqCallBack);
                 }
 
                 public void onResponse(Call call, Response response) throws IOException {
@@ -291,7 +291,7 @@ public class IMOkHttpRequestManager {
             Call newCall = this.mOkHttpClient.newCall(addHeaders().url(String.format("%s?%s", new Object[]{str, sb.toString()})).build());
             newCall.enqueue(new Callback() {
                 public void onFailure(Call call, IOException iOException) {
-                    IMOkHttpRequestManager.this.failedCallBack(iOException.toString(), reqCallBack);
+                    IMOkHttpRequestManager.this.failedCallBack(iOException.getMessage(), reqCallBack);
                 }
 
                 public void onResponse(Call call, Response response) throws IOException {
@@ -375,7 +375,7 @@ public class IMOkHttpRequestManager {
         }
         this.mOkHttpClient.newCall(addHeaders().url(str).build()).enqueue(new Callback() {
             public void onFailure(Call call, IOException iOException) {
-                IMOkHttpRequestManager.this.failedCallBack(handler, i, -1, iOException.toString());
+                IMOkHttpRequestManager.this.failedCallBack(handler, i, -1, iOException.getMessage());
             }
 
             public void onResponse(Call call, Response response) throws IOException {
@@ -420,7 +420,7 @@ public class IMOkHttpRequestManager {
             Call newCall = this.mOkHttpClient.newCall(addHeaders().url(String.format("%s?%s", new Object[]{str, sb.toString()})).build());
             newCall.enqueue(new Callback() {
                 public void onFailure(Call call, IOException iOException) {
-                    IMOkHttpRequestManager.this.failedCallBack(handler, i, -1, iOException.toString());
+                    IMOkHttpRequestManager.this.failedCallBack(handler, i, -1, iOException.getMessage());
                 }
 
                 public void onResponse(Call call, Response response) throws IOException {
@@ -470,7 +470,7 @@ public class IMOkHttpRequestManager {
             Call newCall = this.mOkHttpClient.newCall(addHeaders().url(String.format("%s?%s", new Object[]{str, sb.toString()})).build());
             newCall.enqueue(new Callback() {
                 public void onFailure(Call call, IOException iOException) {
-                    IMOkHttpRequestManager.this.failedCallBack(handler, i, -1, iOException.toString());
+                    IMOkHttpRequestManager.this.failedCallBack(handler, i, -1, iOException.getMessage());
                 }
 
                 public void onResponse(Call call, Response response) throws IOException {
@@ -528,8 +528,8 @@ public class IMOkHttpRequestManager {
             Call newCall = this.mOkHttpClient.newCall(new Request.Builder().addHeader(HttpHeaders.AUTHORIZATION, "Bearer " + ChatLoginController.getInstance().getIMAccessToken()).addHeader("BasicData", "1," + Build.VERSION.RELEASE + ",1," + AboutController.getAppVersion(MyApplication.getInstance())).addHeader(HttpHeaders.CONTENT_TYPE, "application/json;charset=UTF-8").url(String.format("%s?%s", new Object[]{str, sb.toString()})).build());
             newCall.enqueue(new Callback() {
                 public void onFailure(Call call, IOException iOException) {
-                    IMOkHttpRequestManager.this.failedCallBack(iOException.toString(), reqCallBack);
-                    Logx.e(IMOkHttpRequestManager.TAG + iOException.toString());
+                    IMOkHttpRequestManager.this.failedCallBack(iOException.getMessage(), reqCallBack);
+                    Logx.e(IMOkHttpRequestManager.TAG + iOException.getMessage());
                 }
 
                 public void onResponse(Call call, Response response) throws IOException {
@@ -558,7 +558,7 @@ public class IMOkHttpRequestManager {
             sb.append(ChatLoginController.getInstance().getIMAccessToken());
             this.mOkHttpClient.newCall(addHeader2.addHeader(HttpHeaders.AUTHORIZATION, sb.toString()).url(str).post(create).build()).enqueue(new Callback() {
                 public void onFailure(Call call, IOException iOException) {
-                    IMOkHttpRequestManager.this.failedCallBack(handler, i, -1, iOException.toString());
+                    IMOkHttpRequestManager.this.failedCallBack(handler, i, -1, iOException.getMessage());
                 }
 
                 public void onResponse(Call call, Response response) throws IOException {
@@ -611,7 +611,7 @@ public class IMOkHttpRequestManager {
             sb.append(ChatLoginController.getInstance().getIMAccessToken());
             this.mOkHttpClient.newCall(addHeader2.addHeader(HttpHeaders.AUTHORIZATION, sb.toString()).url(str).post(create).build()).enqueue(new Callback() {
                 public void onFailure(Call call, IOException iOException) {
-                    IMOkHttpRequestManager.this.failedCallBack(handler, i, -1, iOException.toString());
+                    IMOkHttpRequestManager.this.failedCallBack(handler, i, -1, iOException.getMessage());
                 }
 
                 public void onResponse(Call call, Response response) throws IOException {
@@ -668,7 +668,7 @@ public class IMOkHttpRequestManager {
             sb.append(ChatLoginController.getInstance().getIMAccessToken());
             this.mOkHttpClient.newCall(addHeader2.addHeader(HttpHeaders.AUTHORIZATION, sb.toString()).url(str).post(create).build()).enqueue(new Callback() {
                 public void onFailure(Call call, IOException iOException) {
-                    IMOkHttpRequestManager.this.failedCallBack(handler, i, -1, iOException.toString(), i2);
+                    IMOkHttpRequestManager.this.failedCallBack(handler, i, -1, iOException.getMessage(), i2);
                 }
 
                 public void onResponse(Call call, Response response) throws IOException {
@@ -729,7 +729,7 @@ public class IMOkHttpRequestManager {
         sb2.append(ChatLoginController.getInstance().getIMAccessToken());
         this.mOkHttpClient.newCall(addHeader2.addHeader(HttpHeaders.AUTHORIZATION, sb2.toString()).url(str).post(create).build()).enqueue(new Callback() {
             public void onFailure(Call call, IOException iOException) {
-                IMOkHttpRequestManager.this.failedCallBack(handler, i, -1, iOException.toString());
+                IMOkHttpRequestManager.this.failedCallBack(handler, i, -1, iOException.getMessage());
             }
 
             public void onResponse(Call call, Response response) throws IOException {
@@ -778,8 +778,8 @@ public class IMOkHttpRequestManager {
 //            sb.append(ChatLoginController.getInstance().getIMAccessToken());
 //            this.mOkHttpClient.newCall(addHeader2.addHeader(HttpHeaders.AUTHORIZATION, sb.toString()).url(str).post(create).build()).enqueue(new Callback() {
 //                public void onFailure(Call call, IOException iOException) {
-//                    IMOkHttpRequestManager.this.failedCallBack(iOException.toString(), reqCallBack);
-//                    Logx.m5550e(IMOkHttpRequestManager.TAG + iOException.toString());
+//                    IMOkHttpRequestManager.this.failedCallBack(iOException.getMessage(), reqCallBack);
+//                    Logx.m5550e(IMOkHttpRequestManager.TAG + iOException.getMessage());
 //                }
 //
 //                public void onResponse(Call call, Response response) throws IOException {
@@ -826,8 +826,8 @@ public class IMOkHttpRequestManager {
             Call newCall = this.mOkHttpClient.newCall(addHeaders().url(str).post(RequestBody.create(MEDIA_TYPE_STRING, sb.toString())).build());
             newCall.enqueue(new Callback() {
                 public void onFailure(Call call, IOException iOException) {
-                    IMOkHttpRequestManager.this.failedCallBack(iOException.toString(), reqCallBack);
-                    Logx.e(IMOkHttpRequestManager.TAG + iOException.toString());
+                    IMOkHttpRequestManager.this.failedCallBack(iOException.getMessage(), reqCallBack);
+                    Logx.e(IMOkHttpRequestManager.TAG + iOException.getMessage());
                 }
 
                 public void onResponse(Call call, Response response) throws IOException {
@@ -862,8 +862,8 @@ public class IMOkHttpRequestManager {
             Call newCall = this.mOkHttpClient.newCall(addHeader.addHeader("BasicData", "1," + Build.VERSION.RELEASE + ",1," + AboutController.getAppVersion(MyApplication.getInstance())).url(str).post(build).build());
             newCall.enqueue(new Callback() {
                 public void onFailure(Call call, IOException iOException) {
-                    IMOkHttpRequestManager.this.failedCallBack(iOException.toString(), reqCallBack);
-                    Logx.e(IMOkHttpRequestManager.TAG + iOException.toString());
+                    IMOkHttpRequestManager.this.failedCallBack(iOException.getMessage(), reqCallBack);
+                    Logx.e(IMOkHttpRequestManager.TAG + iOException.getMessage());
                 }
 
                 public void onResponse(Call call, Response response) throws IOException {

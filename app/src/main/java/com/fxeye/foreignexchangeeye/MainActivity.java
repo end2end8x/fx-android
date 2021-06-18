@@ -8,6 +8,7 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.fxeye.foreignexchangeeye.controller.UserController;
 import com.fxeye.foreignexchangeeye.controller.fristpage.TraderController;
 import com.fxeye.foreignexchangeeye.util_tool.https_controller.NetworkConnectionController;
 
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
 
     public static int index = 1;
-    public static int size = 20;
+    public static int size = 100;
     public static String lc = "vi";
     public static String cc = "vn";
 
@@ -47,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
     public final static int GetTraderInterests = 1005;
     public final static int GetTraderRegulation = 1006;
     public final static int GetSkyRisk = 1007;
+    public final static int GetAgents = 1008;
+    public final static int GetLightMarkets = 1009;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +65,6 @@ public class MainActivity extends AppCompatActivity {
                     JSONObject json = new JSONObject(str);
                     JSONArray result;
                     JSONObject trader;
-                    int index = 1;
-                    int size = 20;
                     switch (msg.what) {
                         case GetTianYan_Zhida_Information:
                             JSONObject content = json.getJSONObject("Content");
@@ -79,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
                             trader = (JSONObject) result.get(0);
                             String traderCode = trader.getString("traderCode");
                             Log.i(TAG, "api_general_advertise " + msg.what + " length " + result.length() + " " + traderCode + " " + trader);
+                            String userId = UserController.getNewBDUserInfo(MainActivity.this).getUserId();
+                            Log.i(TAG, "userId " + userId );
 //                            TraderController.GetTraderSurveys(traderCode, index, size, lc, cc, mHandler, GetTraderSurveys);
 //                            TraderController.GetSpecifiedTrader(traderCode, lc, cc, mHandler, GetSpecifiedTrader);
 //                            TraderController.GetTraderNewsList(traderCode, categorycode, index, size, mHandler, GetTraderNewsList);
@@ -93,6 +96,9 @@ public class MainActivity extends AppCompatActivity {
 //                            TraderController.GetTraderRegulation(traderCode, mHandler, GetTraderRegulation); AUTHEN
 //                            TraderController.GetFakeTraders(MainActivity.this, traderCode, mHandler, GetFakeTraders);
 //                            TraderController.GetSkyRisk(traderCode, traderCode, mHandler, GetFakeTraders); AUTHEN
+//                            TraderController.GetAgents(traderCode, String.valueOf(index), String.valueOf(size), mHandler, GetAgents); AUTHEN
+//                            TraderController.GetLightMarkets(userId, traderCode, mHandler, GetAgents); AUTHEN
+                            TraderController.GetEpcProduct(userId, traderCode, mHandler, GetEpcProduct);
                             break;
                         case GetTraderSurveys:
                             // khảo sát thực tế
@@ -146,12 +152,30 @@ public class MainActivity extends AppCompatActivity {
                             // Trader GetSkyRisk
                             Log.i(TAG, "GetSkyRisk " + msg.what + " " + msg.obj);
                             break;
+                        case GetAgents:
+                            // Trader GetAgents
+                            Log.i(TAG, "GetAgents " + msg.what + " " + msg.obj);
+                            break;
+                        case GetLightMarkets:
+                            // Trader GetLightMarkets
+                            Log.i(TAG, "GetLightMarkets " + msg.what + " " + msg.obj);
+                            break;
+                        case GetEpcProduct:
+                            // Trader GetEpcProduct
+                            Log.i(TAG, "GetEpcProduct " + msg.what + " " + msg.obj);
+                            break;
                         default:
-                            Log.i(TAG, "handleMessage " + msg.what + " " + msg.obj);
+                            if(msg.what  < 0) {
+                                String Code = json.getString("Code");
+                                String Message = json.getString("Message");
+                                Log.e(TAG, "handleMessage Code: " + Code + " Message: " + Message);
+                            } else {
+                                Log.i(TAG, "handleMessage " + msg.what + " " + msg.obj);
+                            }
                             break;
                     }
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                    Log.e(TAG, "JSONException", e);
                 }
             }
         };

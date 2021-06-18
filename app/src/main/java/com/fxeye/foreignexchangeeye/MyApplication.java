@@ -66,7 +66,7 @@ public class MyApplication extends MultiDexApplication {
     }
 
     public static MyApplication getInstance() {
-        return  instance;
+        return instance;
     }
     public static Context getContext() {
         return context;

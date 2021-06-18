@@ -76,9 +76,9 @@
 //                public void onFailure(Call call, IOException iOException) {
 //                    Message message = message;
 //                    message.what = -i;
-//                    message.obj = iOException.toString();
+//                    message.obj = iOException.getMessage();
 //                    handler.sendMessage(message);
-//                    Logger.getLogger(getClass()).mo54118d("mOkHttpRequest Post =%s", iOException.toString());
+//                    Logger.getLogger(getClass()).mo54118d("mOkHttpRequest Post =%s", iOException.getMessage());
 //                }
 //
 //                public void onResponse(Call call, Response response) {
@@ -126,9 +126,9 @@
 //                public void onFailure(Call call, IOException iOException) {
 //                    Message message = message;
 //                    message.what = -i;
-//                    message.obj = iOException.toString();
+//                    message.obj = iOException.getMessage();
 //                    handler.sendMessage(message);
-//                    Logger.getLogger(getClass()).mo54118d("mOkHttpRequest Post =%s", iOException.toString());
+//                    Logger.getLogger(getClass()).mo54118d("mOkHttpRequest Post =%s", iOException.getMessage());
 //                }
 //
 //                public void onResponse(Call call, Response response) {
@@ -218,11 +218,11 @@
 //
 //                        public void onNext(Object obj) {
 //                            if (requestCallBack != null) {
-//                                requestCallBack.onResponse(iOException.toString(), -1);
+//                                requestCallBack.onResponse(iOException.getMessage(), -1);
 //                            }
 //                        }
 //                    });
-//                    Logger.getLogger(getClass()).mo54118d("mOkHttpRequest Post =%s", iOException.toString());
+//                    Logger.getLogger(getClass()).mo54118d("mOkHttpRequest Post =%s", iOException.getMessage());
 //                }
 //
 //                public void onResponse(Call call, final Response response) throws IOException {
@@ -361,7 +361,7 @@
 //            newCall.enqueue(new Callback() {
 //                public void onFailure(Call call, IOException iOException) {
 //                    OkHttpRequestManager.this.failedCallBack("访问失败", reqCallBack);
-//                    Log.e(OkHttpRequestManager.TAG, iOException.toString());
+//                    Log.e(OkHttpRequestManager.TAG, iOException.getMessage());
 //                }
 //
 //                public void onResponse(Call call, Response response) throws IOException {
@@ -412,7 +412,7 @@
 //            newCall.enqueue(new Callback() {
 //                public void onFailure(Call call, IOException iOException) {
 //                    OkHttpRequestManager.this.failedCallBack("访问失败", reqCallBack);
-//                    Log.e(OkHttpRequestManager.TAG, iOException.toString());
+//                    Log.e(OkHttpRequestManager.TAG, iOException.getMessage());
 //                }
 //
 //                public void onResponse(Call call, Response response) throws IOException {
@@ -573,7 +573,7 @@
 //            newCall.enqueue(new Callback() {
 //                public void onFailure(Call call, IOException iOException) {
 //                    OkHttpRequestManager.this.failedCallBack("访问失败", reqCallBack);
-//                    Log.e(OkHttpRequestManager.TAG, iOException.toString());
+//                    Log.e(OkHttpRequestManager.TAG, iOException.getMessage());
 //                }
 //
 //                public void onResponse(Call call, Response response) throws IOException {
@@ -602,7 +602,7 @@
 //            newCall.enqueue(new Callback() {
 //                public void onFailure(Call call, IOException iOException) {
 //                    OkHttpRequestManager.this.failedCallBack("访问失败", reqCallBack);
-//                    Log.e(OkHttpRequestManager.TAG, iOException.toString());
+//                    Log.e(OkHttpRequestManager.TAG, iOException.getMessage());
 //                }
 //
 //                public void onResponse(Call call, Response response) throws IOException {
@@ -630,7 +630,7 @@
 //            this.mOkHttpClient.newCall(new Request.Builder().addHeader(HttpHeaders.CONTENT_TYPE, "application/json").addHeader("BasicData", AppUtils.getHttpHead()).url(str).post(RequestBody.create(MEDIA_TYPE_JSON, json)).build()).enqueue(new Callback() {
 //                public void onFailure(Call call, IOException iOException) {
 //                    OkHttpRequestManager.this.failedCallBack("访问失败", reqCallBack);
-//                    Log.e(OkHttpRequestManager.TAG, iOException.toString());
+//                    Log.e(OkHttpRequestManager.TAG, iOException.getMessage());
 //                }
 //
 //                public void onResponse(Call call, Response response) throws IOException {
@@ -681,7 +681,7 @@
 //            newCall.enqueue(new Callback() {
 //                public void onFailure(Call call, IOException iOException) {
 //                    OkHttpRequestManager.this.failedCallBack("访问失败", reqCallBack);
-//                    Log.e(OkHttpRequestManager.TAG, iOException.toString());
+//                    Log.e(OkHttpRequestManager.TAG, iOException.getMessage());
 //                }
 //
 //                public void onResponse(Call call, Response response) throws IOException {
@@ -715,7 +715,7 @@
 //            newCall.enqueue(new Callback() {
 //                public void onFailure(Call call, IOException iOException) {
 //                    OkHttpRequestManager.this.failedCallBack("访问失败", reqCallBack);
-//                    Log.e(OkHttpRequestManager.TAG, iOException.toString());
+//                    Log.e(OkHttpRequestManager.TAG, iOException.getMessage());
 //                }
 //
 //                public void onResponse(Call call, Response response) throws IOException {

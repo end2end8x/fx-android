@@ -392,7 +392,7 @@ public class OkHttpClientManager {
                     long elapsedRealtime = SystemClock.elapsedRealtime();
                     TimeUrl timeUrl = (TimeUrl) OkHttpClientManager.this.time.remove(request);
                     if (timeUrl != null) {
-                        Logx.i("Return time(ms) " + (elapsedRealtime - timeUrl.start) + " " + request.method() + " " + timeUrl.url);
+                        Logx.i("time(ms) " + (elapsedRealtime - timeUrl.start) + " " + request.method() + " " + timeUrl.url);
                     }
                 } catch (Exception e2) {
                     e2.printStackTrace();
@@ -408,7 +408,7 @@ public class OkHttpClientManager {
                 if (stringCallback != null) {
                     stringCallback.onFailure(request, iOException);
                 }
-                Logx.e("FailedString>>>>>>" + iOException);
+                Logx.e("sendFailedStringCallback IOException " + iOException.getMessage());
             }
         });
     }

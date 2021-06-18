@@ -237,19 +237,19 @@ public class TraderController extends BaseController {
         new OkHttp().OkHttpGetMethod(addEncryptionGETPublicParams(arrayList), handler, i, UrlUtil.TEST_URL);
     }
 
-    public static void GetLightMarkets(String str, String str2, Handler handler, int i) {
+    public static void GetLightMarkets(String uid, String code, Handler handler, int i) {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new BasicNameValuePair("Action", UrlUtil.GetLightMarkets));
-        arrayList.add(new BasicNameValuePair("code", str2));
-        if (str != null) {
-            arrayList.add(new BasicNameValuePair("uid", str));
+        arrayList.add(new BasicNameValuePair("code", code));
+        if (uid != null) {
+            arrayList.add(new BasicNameValuePair("uid", uid));
         } else {
             arrayList.add(new BasicNameValuePair("uid", "0"));
         }
         new OkHttp().OkHttpGetMethod(addEncryptionGETPublicParams(arrayList), handler, i, UrlUtil.TEST_URL);
     }
 
-    public static void GetEpcProduct(String str, String str2, Handler handler, int i) {
+    public static void GetEpcProduct(String userid, String traderCode, Handler handler, int i) {
         if (!AboutController.getAppThreeDayLock()) {
             Context applicationContext = MyApplication.getInstance().getApplicationContext();
             String GetCountryString = BasicUtils.GetCountryString(applicationContext);
@@ -258,12 +258,12 @@ public class TraderController extends BaseController {
             arrayList.add(new BasicNameValuePair("Action", UrlUtil.GetEpcProduct));
             arrayList.add(new BasicNameValuePair("languageCode", GetLanguageString));
             arrayList.add(new BasicNameValuePair("countryCode", GetCountryString));
-            if (str != null) {
-                arrayList.add(new BasicNameValuePair("userid", str));
+            if (userid != null) {
+                arrayList.add(new BasicNameValuePair("userid", userid));
             } else {
                 arrayList.add(new BasicNameValuePair("userid", "0"));
             }
-            arrayList.add(new BasicNameValuePair("traderCode", str2));
+            arrayList.add(new BasicNameValuePair("traderCode", traderCode));
             new OkHttp().OkHttpGetMethod(addEncryptionGETPublicParams(arrayList), handler, i, UrlUtil.TEST_URL);
         }
     }

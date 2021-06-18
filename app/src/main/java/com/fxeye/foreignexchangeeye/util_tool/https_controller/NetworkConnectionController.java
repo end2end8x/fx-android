@@ -1972,7 +1972,7 @@ public class NetworkConnectionController extends BaseController {
                 iOException.printStackTrace();
 //                Message message = message;
                 message.what = -i;
-                message.obj = iOException.toString();
+                message.obj = iOException.getMessage();
                 Message message2 = message;
                 message2.arg2 = i2;
                 handler.sendMessage(message2);
@@ -2014,7 +2014,7 @@ public class NetworkConnectionController extends BaseController {
                 iOException.printStackTrace();
 //                Message message = message;
                 message.what = -i;
-                message.obj = iOException.toString();
+                message.obj = iOException.getMessage();
                 Message message2 = message;
                 message2.arg2 = i2;
                 handler.sendMessage(message2);
@@ -2404,7 +2404,7 @@ public class NetworkConnectionController extends BaseController {
                 iOException.printStackTrace();
 //                Message message = message;
                 message.what = -i;
-                message.obj = iOException.toString();
+                message.obj = iOException.getMessage();
                 Message message2 = message;
                 message2.arg2 = i2;
                 handler.sendMessage(message2);
@@ -2450,7 +2450,7 @@ public class NetworkConnectionController extends BaseController {
                 iOException.printStackTrace();
 //                Message message = message;
                 message.what = -i;
-                message.obj = iOException.toString();
+                message.obj = iOException.getMessage();
                 Message message2 = message;
                 message2.arg2 = i2;
                 handler.sendMessage(message2);
@@ -2495,7 +2495,7 @@ public class NetworkConnectionController extends BaseController {
                 iOException.printStackTrace();
 //                Message message = message;
                 message.what = -i;
-                message.obj = iOException.toString();
+                message.obj = iOException.getMessage();
                 Message message2 = message;
                 message2.arg2 = i2;
                 handler.sendMessage(message2);

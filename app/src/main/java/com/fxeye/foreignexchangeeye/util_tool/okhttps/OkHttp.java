@@ -17,12 +17,11 @@ public class OkHttp {
     public void OkHttpGetMethod(List<NameValuePair> list, final Handler handler, final int i, String str) {
         OkHttpClientManager.getAsyn(str, new OkHttpClientManager.StringCallback() {
             public void onFailure(Request request, IOException iOException) {
-                iOException.printStackTrace();
                 Message message = new Message();
                 message.what = -i;
-                message.obj = iOException.toString();
+                message.obj = iOException.getMessage();
                 handler.sendMessage(message);
-                Log.e(TAG, "result fail");
+                Log.e(TAG, "onFailure ", iOException);
             }
 
             public void onResponse(String str) {
@@ -42,7 +41,7 @@ public class OkHttp {
                 iOException.printStackTrace();
                 Message message = new Message();
                 message.what = -i;
-                message.obj = iOException.toString();
+                message.obj = iOException.getMessage();
                 handler.sendMessage(message);
             }
 
