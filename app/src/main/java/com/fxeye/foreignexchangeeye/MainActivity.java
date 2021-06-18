@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     public final static int GetSkyRisk = 1007;
     public final static int GetAgents = 1008;
     public final static int GetLightMarkets = 1009;
+    public final static int GetTraderFamilyTree = 1010;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                             JSONObject traderRanking = data.getJSONObject("traderranking");
                             result = traderRanking.getJSONArray("result");
                             trader = (JSONObject) result.get(0);
-                            String traderCode = trader.getString("traderCode");
+                            String traderCode = "6821266314"; // trader.getString("traderCode");
                             Log.i(TAG, "api_general_advertise " + msg.what + " length " + result.length() + " " + traderCode + " " + trader);
                             String userId = UserController.getNewBDUserInfo(MainActivity.this).getUserId();
                             Log.i(TAG, "userId " + userId );
@@ -98,7 +99,8 @@ public class MainActivity extends AppCompatActivity {
 //                            TraderController.GetSkyRisk(traderCode, traderCode, mHandler, GetFakeTraders); AUTHEN
 //                            TraderController.GetAgents(traderCode, String.valueOf(index), String.valueOf(size), mHandler, GetAgents); AUTHEN
 //                            TraderController.GetLightMarkets(userId, traderCode, mHandler, GetAgents); AUTHEN
-                            TraderController.GetEpcProduct(userId, traderCode, mHandler, GetEpcProduct);
+//                            TraderController.GetEpcProduct(userId, traderCode, mHandler, GetEpcProduct);
+                            TraderController.GetTraderFamilyTree(traderCode, mHandler, GetTraderFamilyTree);
                             break;
                         case GetTraderSurveys:
                             // khảo sát thực tế
@@ -163,6 +165,10 @@ public class MainActivity extends AppCompatActivity {
                         case GetEpcProduct:
                             // Trader GetEpcProduct
                             Log.i(TAG, "GetEpcProduct " + msg.what + " " + msg.obj);
+                            break;
+                        case GetTraderFamilyTree:
+                            // Trader GetTraderFamilyTree
+                            Log.i(TAG, "GetTraderFamilyTree " + msg.what + " " + msg.obj);
                             break;
                         default:
                             if(msg.what  < 0) {

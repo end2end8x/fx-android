@@ -408,7 +408,7 @@ public class OkHttpClientManager {
                 if (stringCallback != null) {
                     stringCallback.onFailure(request, iOException);
                 }
-                Logx.e("sendFailedStringCallback IOException " + iOException.getMessage());
+                Logx.e("sendFailedStringCallback " + iOException.getMessage());
             }
         });
     }

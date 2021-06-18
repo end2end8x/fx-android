@@ -299,30 +299,30 @@ public class TraderController extends BaseController {
         new OkHttp().OkHttpPostMethod(addEncryptionPOSTPublicParams(arrayList), handler, i, "https://ttapi.fx960.com/");
     }
 
-    public static void GetEpcPermissionStatus(String str, String str2, String str3, Handler handler, int i) {
+    public static void GetEpcPermissionStatus(String uid, String trader, String product, Handler handler, int i) {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new BasicNameValuePair("Action", UrlUtil.GetEpcPermissionStatus));
-        arrayList.add(new BasicNameValuePair("uid", str));
-        arrayList.add(new BasicNameValuePair("trader", str2));
-        arrayList.add(new BasicNameValuePair("product", str3));
+        arrayList.add(new BasicNameValuePair("uid", uid));
+        arrayList.add(new BasicNameValuePair("trader", trader));
+        arrayList.add(new BasicNameValuePair("product", product));
         new OkHttp().OkHttpGetMethod(addEncryptionGETPublicParams(arrayList), handler, i, UrlUtil.TEST_URL);
     }
 
-    public static void GetUpdatingDate(String str, String str2, Handler handler, int i) {
+    public static void GetUpdatingDate(String code, String type, Handler handler, int i) {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new BasicNameValuePair("Action", UrlUtil.GetUpdatingDate));
-        arrayList.add(new BasicNameValuePair("code", str));
-        arrayList.add(new BasicNameValuePair("type", str2));
+        arrayList.add(new BasicNameValuePair("code", code));
+        arrayList.add(new BasicNameValuePair("type", type));
         new OkHttp().OkHttpGetMethod(addImplicitPublicParams(arrayList), handler, i, UrlUtil.TEST_URL);
     }
 
-    public static void GetUltimateAds(String str, String str2, String str3, String str4, Handler handler, int i) {
+    public static void GetUltimateAds(String traderCode, String countryCode, String languageCode, String ver, Handler handler, int i) {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new BasicNameValuePair("Action", UrlUtil.GetUltimateAds));
-        arrayList.add(new BasicNameValuePair("countryCode", str2));
-        arrayList.add(new BasicNameValuePair("languageCode", str3));
-        arrayList.add(new BasicNameValuePair("traderCode", str));
-        arrayList.add(new BasicNameValuePair("ver", str4));
+        arrayList.add(new BasicNameValuePair("countryCode", countryCode));
+        arrayList.add(new BasicNameValuePair("languageCode", languageCode));
+        arrayList.add(new BasicNameValuePair("traderCode", traderCode));
+        arrayList.add(new BasicNameValuePair("ver", ver));
         new OkHttp().OkHttpGetMethod(addEncryptionGETPublicParams(arrayList), handler, i, UrlUtil.TEST_URL);
     }
 
@@ -347,17 +347,17 @@ public class TraderController extends BaseController {
         new OkHttp().OkHttpGetMethod(addEncryptionGETPublicParams(arrayList), handler, i, UrlUtil.TEST_URL);
     }
 
-    public static void GetTraderFamilyTree(String str, Handler handler, int i) {
+    public static void GetTraderFamilyTree(String code, Handler handler, int i) {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new BasicNameValuePair("Action", UrlUtil.GetTraderFamilyTree));
-        arrayList.add(new BasicNameValuePair("code", str));
+        arrayList.add(new BasicNameValuePair("code", code));
         new OkHttp().OkHttpGetMethod(addEncryptionGETPublicParams(arrayList), handler, i, UrlUtil.TEST_URL);
     }
 
-    public static String GetTraderFamilyTree(String str) {
+    public static String GetTraderFamilyTree(String code) {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new BasicNameValuePair("Action", UrlUtil.GetTraderFamilyTree));
-        arrayList.add(new BasicNameValuePair("code", str));
+        arrayList.add(new BasicNameValuePair("code", code));
         List<NameValuePair> addEncryptionGETPublicParams = addEncryptionGETPublicParams(arrayList);
         StringBuffer stringBuffer = new StringBuffer();
         for (int i = 0; i < addEncryptionGETPublicParams.size(); i++) {
@@ -367,32 +367,6 @@ public class TraderController extends BaseController {
             }
         }
         return stringBuffer.toString();
-    }
-
-    public static void setStatus(String str, String str2, TextView textView) {
-        textView.setText(str);
-        if (!TextUtils.isEmpty(str2)) {
-            textView.setBackgroundColor(Color.parseColor(str2));
-        }
-    }
-
-    public static String setName(String str, String str2, TextView textView, TextView textView2) {
-        String str3 = "";
-        if (!TextUtils.isEmpty(str)) {
-            str3 = str3 + str;
-        }
-        if (!TextUtils.isEmpty(str2)) {
-            str3 = str3 + str2;
-        }
-        if (str3.length() > 25) {
-            textView.setText(str3.substring(0, 26) + "...");
-        } else {
-            textView.setText(str3);
-        }
-        if (textView2 != null) {
-            textView2.setText(str3);
-        }
-        return str3;
     }
 
     /* JADX WARNING: Removed duplicated region for block: B:19:0x002a A[SYNTHETIC, Splitter:B:19:0x002a] */

@@ -21,7 +21,7 @@ public class OkHttp {
                 message.what = -i;
                 message.obj = iOException.getMessage();
                 handler.sendMessage(message);
-                Log.e(TAG, "onFailure ", iOException);
+                Log.e(TAG, "onFailure " + message.obj);
             }
 
             public void onResponse(String str) {
