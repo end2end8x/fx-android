@@ -14,7 +14,6 @@ import android.os.HandlerThread;
 import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
-
 import com.fxeye.foreignexchangeeye.MainActivity;
 import com.fxeye.foreignexchangeeye.MyApplication;
 import com.fxeye.foreignexchangeeye.util_tool.https_controller.NetworkConnectionController;
@@ -67,7 +66,7 @@ public class ChatLoginController {
                     } else if (i == 151) {
                         String obj2 = message.obj.toString();
                         if (message.arg2 == 1001) {
-                            Logx.error(ChatLoginController.CLASS + ">>启动读取本地保存>>api_Permission_Login data=" + obj2);
+                            Logx.error(ChatLoginController.CLASS + ">>Start reading local save>>api_Permission_Login data=" + obj2);
                         } else {
                             Logx.error(ChatLoginController.CLASS + ">>>>api_Permission_Login data=" + obj2);
                         }

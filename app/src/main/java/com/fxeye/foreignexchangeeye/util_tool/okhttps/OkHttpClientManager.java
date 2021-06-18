@@ -392,7 +392,7 @@ public class OkHttpClientManager {
                     long elapsedRealtime = SystemClock.elapsedRealtime();
                     TimeUrl timeUrl = (TimeUrl) OkHttpClientManager.this.time.remove(request);
                     if (timeUrl != null) {
-                        Logx.info("Interface return time(ms) " + (elapsedRealtime - timeUrl.start) + " " + request.method() + " " + timeUrl.url);
+                        Logx.info("Return time(ms) " + (elapsedRealtime - timeUrl.start) + " " + request.method() + " " + timeUrl.url);
                     }
                 } catch (Exception e2) {
                     e2.printStackTrace();
