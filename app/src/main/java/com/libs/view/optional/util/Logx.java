@@ -27,7 +27,7 @@ public class Logx {
     }
 
     /* renamed from: e */
-    public static void error(String str) {
+    public static void e(String str) {
         if (TextUtils.isEmpty(str) || str.length() <= MAX) {
             Log.e(TAG, str);
             return;
@@ -45,7 +45,7 @@ public class Logx {
     }
 
     /* renamed from: i */
-    public static void info(String str) {
+    public static void i(String str) {
         if (TextUtils.isEmpty(str) || str.length() <= MAX) {
             Log.i(TAG, str);
             return;

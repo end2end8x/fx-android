@@ -39,7 +39,7 @@ public class AboutController {
         if (sFastSimpleMode == null) {
             sFastSimpleMode = Boolean.valueOf(MyApplication.getInstance().getSharedPreferences("sFastSimpleMode", 0).getBoolean("sFastSimpleMode", false));
         }
-        Logx.error("AboutController isFastSimpleMode == " + sFastSimpleMode);
+        Logx.e("AboutController isFastSimpleMode == " + sFastSimpleMode);
         return sFastSimpleMode.booleanValue();
     }
 

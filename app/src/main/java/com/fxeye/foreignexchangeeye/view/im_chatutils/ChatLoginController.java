@@ -61,14 +61,14 @@ public class ChatLoginController {
                     int i = message.what;
                     if (i == -151) {
                         String obj = message.obj.toString();
-                        Logx.error(ChatLoginController.CLASS + ">>>>api_Permission_Login error=" + obj);
+                        Logx.e(ChatLoginController.CLASS + ">>>>api_Permission_Login error=" + obj);
                         ChatLoginController.this.handler.sendEmptyMessageDelayed(152, ChatLoginController.checkTime);
                     } else if (i == 151) {
                         String obj2 = message.obj.toString();
                         if (message.arg2 == 1001) {
-                            Logx.error(ChatLoginController.CLASS + ">>Start reading local save>>api_Permission_Login data=" + obj2);
+                            Logx.e(ChatLoginController.CLASS + ">>Start reading local save>>api_Permission_Login data=" + obj2);
                         } else {
-                            Logx.error(ChatLoginController.CLASS + ">>>>api_Permission_Login data=" + obj2);
+                            Logx.e(ChatLoginController.CLASS + ">>>>api_Permission_Login data=" + obj2);
                         }
                         IMAccessTokenBean iMAccessTokenBean = (IMAccessTokenBean) ChatLoginController.this.gson.fromJson(obj2, IMAccessTokenBean.class);
                         if (iMAccessTokenBean.isStatus()) {
@@ -121,7 +121,7 @@ public class ChatLoginController {
                     this.mIsWifi = false;
                 }
             }
-            Logx.info(CLASS + ">>>>checkNetStatus mIsWifi=" + this.mIsWifi + " mIsNetConnected=" + this.mIsNetConnected);
+            Logx.i(CLASS + ">>>>checkNetStatus mIsWifi=" + this.mIsWifi + " mIsNetConnected=" + this.mIsNetConnected);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -130,11 +130,11 @@ public class ChatLoginController {
 
     public void checkTimeOut(boolean z) {
         long currentTimeMillis = System.currentTimeMillis();
-        Logx.info(CLASS + ">>>>checkTimeOut current=" + currentTimeMillis + " mIsNetConnected=" + this.mIsNetConnected);
+        Logx.i(CLASS + ">>>>checkTimeOut current=" + currentTimeMillis + " mIsNetConnected=" + this.mIsNetConnected);
         IMAccessTokenBean iMAccessTokenBean = imAccessTokenBean;
         if (iMAccessTokenBean != null) {
             long getSavedTime = currentTimeMillis - iMAccessTokenBean.getGetSavedTime();
-            Logx.info(CLASS + ">>>>checkTimeOut current=" + currentTimeMillis + " lastSaveTime=" + imAccessTokenBean.getGetSavedTime() + "  checkTime=" + checkTime);
+            Logx.i(CLASS + ">>>>checkTimeOut current=" + currentTimeMillis + " lastSaveTime=" + imAccessTokenBean.getGetSavedTime() + "  checkTime=" + checkTime);
             if (getSavedTime > checkTime || z) {
                 NetworkConnectionController.api_Permission_Login(this.handler, 151);
                 return;
