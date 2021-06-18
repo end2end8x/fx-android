@@ -129,11 +129,11 @@ public class IMOkHttpRequestManager {
             }
             Response execute = this.mOkHttpClient.newCall(addHeaders().url(str).post(RequestBody.create(MEDIA_TYPE_JSON, sb.toString())).build()).execute();
             if (execute.isSuccessful()) {
-                Logx.m5550e("OkHttpRequestManagerresponse ----->" + execute.body().string());
+                Logx.error("OkHttpRequestManagerresponse ----->" + execute.body().string());
             }
         } catch (Exception e) {
             e.printStackTrace();
-            Logx.m5550e("OkHttpRequestManagerrequestGetBySyn: " + e.toString());
+            Logx.error("OkHttpRequestManagerrequestGetBySyn: " + e.toString());
         }
     }
 
@@ -153,7 +153,7 @@ public class IMOkHttpRequestManager {
             build.body().toString();
         } catch (Exception e) {
             e.printStackTrace();
-            Logx.m5550e("OkHttpRequestManagerrequestGetBySyn: " + e.toString());
+            Logx.error("OkHttpRequestManagerrequestGetBySyn: " + e.toString());
         }
     }
 
@@ -172,7 +172,7 @@ public class IMOkHttpRequestManager {
             newCall.enqueue(new Callback() {
                 public void onFailure(Call call, IOException iOException) {
                     IMOkHttpRequestManager.this.failedCallBack(iOException.toString(), reqCallBack);
-                    Logx.m5550e(IMOkHttpRequestManager.TAG + iOException.toString());
+                    Logx.error(IMOkHttpRequestManager.TAG + iOException.toString());
                 }
 
                 public void onResponse(Call call, Response response) throws IOException {
@@ -200,7 +200,7 @@ public class IMOkHttpRequestManager {
             });
             return newCall;
         } catch (Exception e) {
-            Logx.m5550e(TAG + e.toString());
+            Logx.error(TAG + e.toString());
             return null;
         }
     }
@@ -220,7 +220,7 @@ public class IMOkHttpRequestManager {
             newCall.enqueue(new Callback() {
                 public void onFailure(Call call, IOException iOException) {
                     IMOkHttpRequestManager.this.failedCallBack(iOException.toString(), reqCallBack);
-                    Logx.m5550e(IMOkHttpRequestManager.TAG + iOException.toString());
+                    Logx.error(IMOkHttpRequestManager.TAG + iOException.toString());
                 }
 
                 public void onResponse(Call call, Response response) throws IOException {
@@ -239,7 +239,7 @@ public class IMOkHttpRequestManager {
             });
             return newCall;
         } catch (Exception e) {
-            Logx.m5550e(TAG + e.toString());
+            Logx.error(TAG + e.toString());
             return null;
         }
     }
@@ -272,7 +272,7 @@ public class IMOkHttpRequestManager {
             });
             return newCall;
         } catch (Exception e) {
-            Logx.m5550e(TAG + e.toString());
+            Logx.error(TAG + e.toString());
             return null;
         }
     }
@@ -315,7 +315,7 @@ public class IMOkHttpRequestManager {
             });
             return newCall;
         } catch (Exception e) {
-            Logx.m5550e(TAG + e.toString());
+            Logx.error(TAG + e.toString());
             return null;
         }
     }
@@ -451,7 +451,7 @@ public class IMOkHttpRequestManager {
             });
             return newCall;
         } catch (Exception e) {
-            Logx.m5550e(TAG + e.toString());
+            Logx.error(TAG + e.toString());
             return null;
         }
     }
@@ -509,7 +509,7 @@ public class IMOkHttpRequestManager {
             });
             return newCall;
         } catch (Exception e) {
-            Logx.m5550e(TAG + e.toString());
+            Logx.error(TAG + e.toString());
             return null;
         }
     }
@@ -529,7 +529,7 @@ public class IMOkHttpRequestManager {
             newCall.enqueue(new Callback() {
                 public void onFailure(Call call, IOException iOException) {
                     IMOkHttpRequestManager.this.failedCallBack(iOException.toString(), reqCallBack);
-                    Logx.m5550e(IMOkHttpRequestManager.TAG + iOException.toString());
+                    Logx.error(IMOkHttpRequestManager.TAG + iOException.toString());
                 }
 
                 public void onResponse(Call call, Response response) throws IOException {
@@ -543,7 +543,7 @@ public class IMOkHttpRequestManager {
             });
             return newCall;
         } catch (Exception e) {
-            Logx.m5550e(TAG + e.toString());
+            Logx.error(TAG + e.toString());
             return null;
         }
     }
@@ -596,7 +596,7 @@ public class IMOkHttpRequestManager {
             });
             return null;
         } catch (Exception e) {
-            Logx.m5550e("OkHttpRequestManager>>>" + e.toString());
+            Logx.error("OkHttpRequestManager>>>" + e.toString());
             return null;
         }
     }
@@ -653,7 +653,7 @@ public class IMOkHttpRequestManager {
             });
             return null;
         } catch (Exception e) {
-            Logx.m5550e("OkHttpRequestManager>>>" + e.toString());
+            Logx.error("OkHttpRequestManager>>>" + e.toString());
             return null;
         }
     }
@@ -706,7 +706,7 @@ public class IMOkHttpRequestManager {
             });
             return null;
         } catch (Exception e) {
-            Logx.m5550e("OkHttpRequestManager>>>" + e.toString());
+            Logx.error("OkHttpRequestManager>>>" + e.toString());
             return null;
         }
     }
@@ -827,7 +827,7 @@ public class IMOkHttpRequestManager {
             newCall.enqueue(new Callback() {
                 public void onFailure(Call call, IOException iOException) {
                     IMOkHttpRequestManager.this.failedCallBack(iOException.toString(), reqCallBack);
-                    Logx.m5550e(IMOkHttpRequestManager.TAG + iOException.toString());
+                    Logx.error(IMOkHttpRequestManager.TAG + iOException.toString());
                 }
 
                 public void onResponse(Call call, Response response) throws IOException {
@@ -843,7 +843,7 @@ public class IMOkHttpRequestManager {
             });
             return newCall;
         } catch (Exception e) {
-            Logx.m5550e(TAG + e.toString());
+            Logx.error(TAG + e.toString());
             return null;
         }
     }
@@ -863,7 +863,7 @@ public class IMOkHttpRequestManager {
             newCall.enqueue(new Callback() {
                 public void onFailure(Call call, IOException iOException) {
                     IMOkHttpRequestManager.this.failedCallBack(iOException.toString(), reqCallBack);
-                    Logx.m5550e(IMOkHttpRequestManager.TAG + iOException.toString());
+                    Logx.error(IMOkHttpRequestManager.TAG + iOException.toString());
                 }
 
                 public void onResponse(Call call, Response response) throws IOException {
@@ -879,7 +879,7 @@ public class IMOkHttpRequestManager {
             });
             return newCall;
         } catch (Exception e) {
-            Logx.m5550e(TAG + e.toString());
+            Logx.error(TAG + e.toString());
             return null;
         }
     }

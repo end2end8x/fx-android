@@ -6,7 +6,7 @@ import android.util.Log;
 public class Logx {
     private static final boolean DEBUG = true;
     private static int MAX = 2048;
-    private static final String TAG = "fixbug";
+    private static final String TAG = "Logx";
 
     /* renamed from: d */
     public static void m5549d(String str) {
@@ -27,7 +27,7 @@ public class Logx {
     }
 
     /* renamed from: e */
-    public static void m5550e(String str) {
+    public static void error(String str) {
         if (TextUtils.isEmpty(str) || str.length() <= MAX) {
             Log.e(TAG, str);
             return;
@@ -45,7 +45,7 @@ public class Logx {
     }
 
     /* renamed from: i */
-    public static void m5551i(String str) {
+    public static void info(String str) {
         if (TextUtils.isEmpty(str) || str.length() <= MAX) {
             Log.i(TAG, str);
             return;
