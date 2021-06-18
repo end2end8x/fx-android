@@ -87,20 +87,20 @@ public class MainActivity extends AppCompatActivity {
 //                            TraderController.GetSpecifiedTrader(traderCode, lc, cc, mHandler, GetSpecifiedTrader);
 //                            TraderController.GetTraderNewsList(traderCode, categorycode, index, size, mHandler, GetTraderNewsList);
 //                            TraderController.getNotice(traderCode, mHandler, getNotice);
-//                            TraderController.GetTraderTransfer(traderCode, mHandler, GetTraderTransfer); AUTHEN
-//                            TraderController.GetTraderEvidence(traderCode, mHandler, GetTraderEvidence); AUTHEN
+//                            TraderController.GetTraderTransfer(traderCode, mHandler, GetTraderTransfer); // TODO: AUTHEN
+//                            TraderController.GetTraderEvidence(traderCode, mHandler, GetTraderEvidence); // TODO: AUTHEN
 //                            TraderController.GetMT4Items(traderCode, lc, cc, mHandler, GetMT4Items);
 //                            TraderController.GetTraderAccount(traderCode, lc, cc, mHandler, GetTraderAccount);
-//                            TraderController.GetTraderComplaint(traderCode, mHandler, GetTraderComplaint); AUTHEN
+//                            TraderController.GetTraderComplaint(traderCode, mHandler, GetTraderComplaint); // TODO: AUTHEN
 //                            TraderController.GetTraderDomain(traderCode, lc, mHandler, GetTraderDomain);
-//                            TraderController.GetTraderInterests(traderCode, mHandler, GetTraderInterests); AUTHEN
-//                            TraderController.GetTraderRegulation(traderCode, mHandler, GetTraderRegulation); AUTHEN
+//                            TraderController.GetTraderInterests(traderCode, mHandler, GetTraderInterests); // TODO: AUTHEN
+//                            TraderController.GetTraderRegulation(traderCode, mHandler, GetTraderRegulation); // TODO: AUTHEN
 //                            TraderController.GetFakeTraders(MainActivity.this, traderCode, mHandler, GetFakeTraders);
-//                            TraderController.GetSkyRisk(traderCode, traderCode, mHandler, GetFakeTraders); AUTHEN
-//                            TraderController.GetAgents(traderCode, String.valueOf(index), String.valueOf(size), mHandler, GetAgents); AUTHEN
-//                            TraderController.GetLightMarkets(userId, traderCode, mHandler, GetAgents); AUTHEN
+//                            TraderController.GetSkyRisk(traderCode, traderCode, mHandler, GetFakeTraders); // TODO: AUTHEN
+//                            TraderController.GetAgents(traderCode, String.valueOf(index), String.valueOf(size), mHandler, GetAgents); // TODO: AUTHEN
+//                            TraderController.GetLightMarkets(userId, traderCode, mHandler, GetAgents); // TODO: AUTHEN
 //                            TraderController.GetEpcProduct(userId, traderCode, mHandler, GetEpcProduct);
-                            TraderController.GetTraderFamilyTree(traderCode, mHandler, GetTraderFamilyTree);
+//                            TraderController.GetTraderFamilyTree(traderCode, mHandler, GetTraderFamilyTree); // TODO: AUTHEN
                             break;
                         case GetTraderSurveys:
                             // khảo sát thực tế
