@@ -18,7 +18,13 @@ import org.json.JSONObject;
 public class MainActivity extends AppCompatActivity {
 
     private Handler mHandler;
-    private static final String TAG = "MainActivity";
+
+    public static final String TAG = "MainActivity";
+
+    public static int index = 1;
+    public static int size = 20;
+    public static String lc = "vi";
+    public static String cc = "vn";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,18 +39,31 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     JSONObject json = new JSONObject(str);
                     JSONArray result;
+                    JSONObject trader;
+                    int index = 1;
+                    int size = 20;
                     switch (msg.what) {
                         case 72:
                             JSONObject content = json.getJSONObject("Content");
                             result = content.getJSONArray("result");
-                            Log.i(TAG, "result what: " + msg.what + " length " + result.length() + " " + result.get(0).toString());
+                            trader = (JSONObject) result.get(0);
+                            String code = trader.getString("code");
+                            Log.i(TAG, "result what: " + msg.what + " length " + result.length() + " " + code + " " + trader);
                             break;
                         case 75:
                             JSONObject data = json.getJSONObject("Data");
                             JSONObject traderRanking = data.getJSONObject("traderranking");
                             result = traderRanking.getJSONArray("result");
-                            Log.i(TAG, "result what: " + msg.what + " length " + result.length() + " " + result.get(0).toString());
+                            trader = (JSONObject) result.get(0);
+                            String traderCode = trader.getString("traderCode");
+                            Log.i(TAG, "result what: " + msg.what + " length " + result.length() + " " + traderCode + " " + trader);
+                            TraderController.GetTraderSurveys(traderCode, index, size, cc, lc, mHandler, 96);
                             break;
+
+                        case 96:
+                            Log.i(TAG, "handleMessage GetTraderSurveys " + msg.obj);
+                            break;
+
                         default:
                             Log.i(TAG, "handleMessage " + msg.obj);
                             break;
