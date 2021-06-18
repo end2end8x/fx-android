@@ -11,19 +11,17 @@ import com.fxeye.foreignexchangeeye.util_tool.https_controller.NetworkConnection
 
 public class MainActivity extends AppCompatActivity {
 
-    private Handler handler;
+    private Handler mHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        this.handler = new Handler() {
+        this.mHandler = new Handler() {
             public void handleMessage(Message message) {
-                Log.i("test", "handleMessage what" + message.what + " " + message.arg1);
-                if (message.what == 1) {
-                    Log.i("test", "handleMessage " + message.obj);
-                }
+                Log.i("test", "handleMessage what " + message.what + " " + message.arg1);
+                Log.i("test", "handleMessage " + message.obj);
                 super.handleMessage(message);
             }
         };
@@ -33,7 +31,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         String obj = "lite";
-        NetworkConnectionController.JiaoYiShang_Search(obj, MainActivity.this.handler, 1);
-//        NetworkConnectionController.GetSearch_Find(this.handler, 1);
+//        NetworkConnectionController.JiaoYiShang_Search(obj, this.mHandler, 1);
+//        NetworkConnectionController.GetSearch_Find(this.mHandler, 1);
+        NetworkConnectionController.GetTianYan_Zhida_Information(this.mHandler, 72);
+        NetworkConnectionController.api_general_advertise(this.mHandler, 75);
     }
 }

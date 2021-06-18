@@ -405,7 +405,6 @@ public class OkHttpClientManager {
     public void sendFailedStringCallback(final Request request, final IOException iOException, final StringCallback stringCallback) {
         this.mDelivery.post(new Runnable() {
             public void run() {
-//                StringCallback stringCallback = stringCallback;
                 if (stringCallback != null) {
                     stringCallback.onFailure(request, iOException);
                 }
@@ -418,11 +417,10 @@ public class OkHttpClientManager {
     public void sendSuccessStringCallback(final String str, final StringCallback stringCallback) {
         this.mDelivery.post(new Runnable() {
             public void run() {
-//                StringCallback stringCallback = stringCallback;
                 if (stringCallback != null) {
                     stringCallback.onResponse(str);
                 }
-                Log.i("test", "result=..huoqunewslist:" + str);
+                Log.i(TAG, "OkHttpClientManager sendSuccessStringCallback length " + str.length());
             }
         });
     }
