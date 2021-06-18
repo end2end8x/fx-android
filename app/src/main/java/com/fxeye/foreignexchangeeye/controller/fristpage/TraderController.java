@@ -224,15 +224,15 @@ public class TraderController extends BaseController {
         new OkHttp().OkHttpPostMethod(addEncryptionPOSTPublicParams(arrayList), handler, i, UrlUtil.TEST_URL);
     }
 
-    public static void GetAgents(String str, String str2, String str3, Handler handler, int i) {
+    public static void GetAgents(String code, String pageIndex, String pageSize, Handler handler, int i) {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new BasicNameValuePair("Action", UrlUtil.GetAgents));
-        arrayList.add(new BasicNameValuePair("code", str));
-        if (str2 != null) {
-            arrayList.add(new BasicNameValuePair("pageIndex", str2));
+        arrayList.add(new BasicNameValuePair("code", code));
+        if (pageIndex != null) {
+            arrayList.add(new BasicNameValuePair("pageIndex", pageIndex));
         }
-        if (str3 != null) {
-            arrayList.add(new BasicNameValuePair("pageSize", str3));
+        if (pageSize != null) {
+            arrayList.add(new BasicNameValuePair("pageSize", pageSize));
         }
         new OkHttp().OkHttpGetMethod(addEncryptionGETPublicParams(arrayList), handler, i, UrlUtil.TEST_URL);
     }
