@@ -182,17 +182,17 @@ public class TraderController extends BaseController {
         new OkHttp().OkHttpGetMethod(addEncryptionGETPublicParams(arrayList), handler, i, UrlUtil.TEST_URL);
     }
 
-    public static void GetTraderInterests(String str, Handler handler, int i) {
+    public static void GetTraderInterests(String code, Handler handler, int i) {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new BasicNameValuePair("Action", UrlUtil.GetTraderInterests));
-        arrayList.add(new BasicNameValuePair("code", str));
+        arrayList.add(new BasicNameValuePair("code", code));
         new OkHttp().OkHttpGetMethod(addEncryptionGETPublicParams(arrayList), handler, i, UrlUtil.TEST_URL);
     }
 
-    public static void GetTraderRegulation(String str, Handler handler, int i) {
+    public static void GetTraderRegulation(String code, Handler handler, int i) {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new BasicNameValuePair("Action", UrlUtil.GetTraderRegulation));
-        arrayList.add(new BasicNameValuePair("code", str));
+        arrayList.add(new BasicNameValuePair("code", code));
         new OkHttp().OkHttpGetMethod(addEncryptionGETPublicParams(arrayList), handler, i, UrlUtil.TEST_URL);
     }
 
@@ -207,11 +207,11 @@ public class TraderController extends BaseController {
         new OkHttp().OkHttpGetMethod(addEncryptionGETPublicParams(arrayList), handler, i, UrlUtil.TEST_URL);
     }
 
-    public static void GetSkyRisk(String str, String str2, Handler handler, int i) {
+    public static void GetSkyRisk(String code, String type, Handler handler, int i) {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new BasicNameValuePair("Action", UrlUtil.GetSkyRisk));
-        arrayList.add(new BasicNameValuePair("code", str));
-        arrayList.add(new BasicNameValuePair("type", str2));
+        arrayList.add(new BasicNameValuePair("code", code));
+        arrayList.add(new BasicNameValuePair("type", type));
         new OkHttp().OkHttpGetMethod(addEncryptionGETPublicParams(arrayList), handler, i, UrlUtil.TEST_URL);
     }
 

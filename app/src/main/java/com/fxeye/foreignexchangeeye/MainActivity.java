@@ -44,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
     public final static int GetTraderTransfer = 1002;
     public final static int GetTraderEvidence = 1003;
     public final static int GetTraderComplaint = 1004;
+    public final static int GetTraderInterests = 1005;
+    public final static int GetTraderRegulation = 1006;
+    public final static int GetSkyRisk = 1007;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,9 +88,11 @@ public class MainActivity extends AppCompatActivity {
 //                            TraderController.GetMT4Items(traderCode, lc, cc, mHandler, GetMT4Items);
 //                            TraderController.GetTraderAccount(traderCode, lc, cc, mHandler, GetTraderAccount);
 //                            TraderController.GetTraderComplaint(traderCode, mHandler, GetTraderComplaint); AUTHEN
-
-                            TraderController.GetTraderDomain(traderCode, lc, mHandler, GetTraderDomain);
-
+//                            TraderController.GetTraderDomain(traderCode, lc, mHandler, GetTraderDomain);
+//                            TraderController.GetTraderInterests(traderCode, mHandler, GetTraderInterests); AUTHEN
+//                            TraderController.GetTraderRegulation(traderCode, mHandler, GetTraderRegulation); AUTHEN
+//                            TraderController.GetFakeTraders(MainActivity.this, traderCode, mHandler, GetFakeTraders);
+//                            TraderController.GetSkyRisk(traderCode, traderCode, mHandler, GetFakeTraders); AUTHEN
                             break;
                         case GetTraderSurveys:
                             // khảo sát thực tế
@@ -124,6 +129,22 @@ public class MainActivity extends AppCompatActivity {
                         case GetTraderDomain:
                             // Trader GetTraderDomain
                             Log.i(TAG, "GetTraderDomain " + msg.what + " " + msg.obj);
+                            break;
+                        case GetTraderInterests:
+                            // Trader GetTraderInterests
+                            Log.i(TAG, "GetTraderInterests " + msg.what + " " + msg.obj);
+                            break;
+                        case GetTraderRegulation:
+                            // Trader GetTraderRegulation
+                            Log.i(TAG, "GetTraderRegulation " + msg.what + " " + msg.obj);
+                            break;
+                        case GetFakeTraders:
+                            // Trader GetFakeTraders
+                            Log.i(TAG, "GetFakeTraders " + msg.what + " " + msg.obj);
+                            break;
+                        case GetSkyRisk:
+                            // Trader GetSkyRisk
+                            Log.i(TAG, "GetSkyRisk " + msg.what + " " + msg.obj);
                             break;
                         default:
                             Log.i(TAG, "handleMessage " + msg.what + " " + msg.obj);
