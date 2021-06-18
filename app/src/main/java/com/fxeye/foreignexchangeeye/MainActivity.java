@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
     public static int index = 1;
     public static int size = 20;
-    public static String lc = "en";
-    public static String cc = "us";
+    public static String lc = "vi";
+    public static String cc = "vn";
 
     public static String categorycode = "zx_trader_total";
 
@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     public final static int GetTraderSurveys = 96;
     public final static int GetSpecifiedTrader = 1;
     public final static int GetTraderNewsList = 43;
+
+    public final static int getNotice = 999;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,27 +68,34 @@ public class MainActivity extends AppCompatActivity {
                             String traderCode = trader.getString("traderCode");
                             Log.i(TAG, "api_general_advertise " + msg.what + " length " + result.length() + " " + traderCode + " " + trader);
 
-                            TraderController.GetTraderSurveys(traderCode, index, size, cc, lc, mHandler, GetTraderSurveys);
+//                            TraderController.GetTraderSurveys(traderCode, index, size, cc, lc, mHandler, GetTraderSurveys);
+//
+//                            TraderController.GetSpecifiedTrader(traderCode, lc, cc, mHandler, GetSpecifiedTrader);
+//
+//                            TraderController.GetTraderNewsList(traderCode, categorycode, index, size, mHandler, GetTraderNewsList);
 
-                            TraderController.GetSpecifiedTrader(traderCode, lc, cc, mHandler, GetSpecifiedTrader);
-
-                            TraderController.GetTraderNewsList(traderCode, categorycode, index, size, mHandler, GetTraderNewsList);
+                            TraderController.getNotice(traderCode, mHandler, getNotice);
 
                             break;
 
                         case GetTraderSurveys:
                             // khảo sát thực tế
-                            Log.i(TAG, "handleMessage GetTraderSurveys " + msg.what + " " + msg.obj);
+                            Log.i(TAG, "GetTraderSurveys " + msg.what + " " + msg.obj);
                             break;
 
                         case GetSpecifiedTrader:
                             // Trader summary
-                            Log.i(TAG, "handleMessage GetSpecifiedTrader "+ msg.what + " " + msg.obj);
+                            Log.i(TAG, "GetSpecifiedTrader "+ msg.what + " " + msg.obj);
                             break;
 
                         case GetTraderNewsList:
-                            // Trader summary
-                            Log.i(TAG, "handleMessage GetTraderNewsList " + msg.what + " " + msg.obj);
+                            // Trader News
+                            Log.i(TAG, "GetTraderNewsList " + msg.what + " " + msg.obj);
+                            break;
+
+                        case getNotice:
+                            // Trader Notice
+                            Log.i(TAG, "getNotice " + msg.what + " " + msg.obj);
                             break;
 
                         default:
@@ -103,11 +112,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        String obj = "lite";
 //        NetworkConnectionController.JiaoYiShang_Search(obj, this.mHandler, 1);
 //        NetworkConnectionController.GetSearch_Find(this.mHandler, 1);
-        NetworkConnectionController.GetTianYan_Zhida_Information(this.mHandler, 72);
-        NetworkConnectionController.api_general_advertise(this.mHandler, 75);
-//        TraderController.GetTraderNewsList();
+        NetworkConnectionController.GetTianYan_Zhida_Information(this.mHandler, GetTianYan_Zhida_Information);
+        NetworkConnectionController.api_general_advertise(this.mHandler, api_general_advertise);
     }
 }
