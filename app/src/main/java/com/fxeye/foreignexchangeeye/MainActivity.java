@@ -23,8 +23,16 @@ public class MainActivity extends AppCompatActivity {
 
     public static int index = 1;
     public static int size = 20;
-    public static String lc = "vi";
-    public static String cc = "vn";
+    public static String lc = "en";
+    public static String cc = "us";
+
+    public static String categorycode = "zx_trader_total";
+
+    public final static int GetTianYan_Zhida_Information = 72;
+    public final static int api_general_advertise = 75;
+    public final static int GetTraderSurveys = 96;
+    public final static int GetSpecifiedTrader = 1;
+    public final static int GetTraderNewsList = 43;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,25 +51,42 @@ public class MainActivity extends AppCompatActivity {
                     int index = 1;
                     int size = 20;
                     switch (msg.what) {
-                        case 72:
+                        case GetTianYan_Zhida_Information:
                             JSONObject content = json.getJSONObject("Content");
                             result = content.getJSONArray("result");
                             trader = (JSONObject) result.get(0);
                             String code = trader.getString("code");
-                            Log.i(TAG, "result what: " + msg.what + " length " + result.length() + " " + code + " " + trader);
+                            Log.i(TAG, "GetTianYan_Zhida_Information " + msg.what + " length " + result.length() + " " + code + " " + trader);
                             break;
-                        case 75:
+                        case api_general_advertise:
                             JSONObject data = json.getJSONObject("Data");
                             JSONObject traderRanking = data.getJSONObject("traderranking");
                             result = traderRanking.getJSONArray("result");
                             trader = (JSONObject) result.get(0);
                             String traderCode = trader.getString("traderCode");
-                            Log.i(TAG, "result what: " + msg.what + " length " + result.length() + " " + traderCode + " " + trader);
-                            TraderController.GetTraderSurveys(traderCode, index, size, cc, lc, mHandler, 96);
+                            Log.i(TAG, "api_general_advertise " + msg.what + " length " + result.length() + " " + traderCode + " " + trader);
+
+                            TraderController.GetTraderSurveys(traderCode, index, size, cc, lc, mHandler, GetTraderSurveys);
+
+                            TraderController.GetSpecifiedTrader(traderCode, lc, cc, mHandler, GetSpecifiedTrader);
+
+                            TraderController.GetTraderNewsList(traderCode, categorycode, index, size, mHandler, GetTraderNewsList);
+
                             break;
 
-                        case 96:
-                            Log.i(TAG, "handleMessage GetTraderSurveys " + msg.obj);
+                        case GetTraderSurveys:
+                            // khảo sát thực tế
+                            Log.i(TAG, "handleMessage GetTraderSurveys " + msg.what + " " + msg.obj);
+                            break;
+
+                        case GetSpecifiedTrader:
+                            // Trader summary
+                            Log.i(TAG, "handleMessage GetSpecifiedTrader "+ msg.what + " " + msg.obj);
+                            break;
+
+                        case GetTraderNewsList:
+                            // Trader summary
+                            Log.i(TAG, "handleMessage GetTraderNewsList " + msg.what + " " + msg.obj);
                             break;
 
                         default:

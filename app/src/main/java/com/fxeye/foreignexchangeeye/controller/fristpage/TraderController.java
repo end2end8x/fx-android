@@ -100,24 +100,24 @@ public class TraderController extends BaseController {
         return "";
     }
 
-    public static void GetSpecifiedTrader(String str, Handler handler, int i) {
-        GetSpecifiedTrader(str, (String) null, (String) null, handler, i);
-    }
+//    public static void GetSpecifiedTrader(String traderCode, Handler handler, int what1) {
+//        GetSpecifiedTrader(traderCode, (String) null, (String) null, handler, what1);
+//    }
 
-    public static void GetSpecifiedTrader(String str, String str2, String str3, Handler handler, int i) {
+    public static void GetSpecifiedTrader(String traderCode, String languageCode, String countryCode, Handler handler, int what1) {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new BasicNameValuePair("Action", UrlUtil.GetSpecifiedTrader));
-        arrayList.add(new BasicNameValuePair("traderCode", str));
+        arrayList.add(new BasicNameValuePair("traderCode", traderCode));
         String appVersionName = AboutController.getAppVersionName(MyApplication.getContext());
         if (TextUtils.isEmpty(appVersionName)) {
             appVersionName = "";
         }
         arrayList.add(new BasicNameValuePair("ver", appVersionName));
-        if (str2 != null) {
-            arrayList.add(new BasicNameValuePair("languageCode", str2));
-            arrayList.add(new BasicNameValuePair("countryCode", str3));
+        if (languageCode != null) {
+            arrayList.add(new BasicNameValuePair("languageCode", languageCode));
+            arrayList.add(new BasicNameValuePair("countryCode", countryCode));
         }
-        new OkHttp().OkHttpGetMethod(addEncryptionGETPublicParams(arrayList), handler, i, UrlUtil.TEST_URL);
+        new OkHttp().OkHttpGetMethod(addEncryptionGETPublicParams(arrayList), handler, what1, UrlUtil.TEST_URL);
     }
 
     public static void GetTraderNewsList(String tradercode, String categorycode, int index, int size, Handler handler, int what43) {
