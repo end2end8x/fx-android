@@ -10,17 +10,26 @@ import android.os.Process;
 import android.util.Log;
 import android.webkit.WebView;
 
+import androidx.multidex.MultiDex;
+import androidx.multidex.MultiDexApplication;
+
 import com.fxeye.foreignexchangeeye.view.im_chatutils.ChatLoginController;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-public class MyApplication extends Application {
+public class MyApplication extends MultiDexApplication {
     /* access modifiers changed from: private */
     public static MyApplication instance;
     private static Context context;
     /* access modifiers changed from: private */
     private ServiceConnection mServiceConn;
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
 
     public static String getProcessName(Context context2) {
         if (context2 == null) {

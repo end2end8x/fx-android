@@ -8,6 +8,7 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.fxeye.foreignexchangeeye.controller.fristpage.TraderController;
 import com.fxeye.foreignexchangeeye.util_tool.https_controller.NetworkConnectionController;
 
 import org.json.JSONArray;
@@ -29,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
             public void handleMessage(Message msg) {
                 Log.i(TAG, "handleMessage what " + msg.what + " arg1 " + msg.arg1);
                 String str = msg.obj instanceof String ? msg.obj.toString() : null;
-//                Log.i(TAG, "handleMessage " + msg.obj);
                 try {
                     JSONObject json = new JSONObject(str);
                     JSONArray result;
@@ -44,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
                             JSONObject traderRanking = data.getJSONObject("traderranking");
                             result = traderRanking.getJSONArray("result");
                             Log.i(TAG, "result what: " + msg.what + " length " + result.length() + " " + result.get(0).toString());
+                            break;
+                        default:
+                            Log.i(TAG, "handleMessage " + msg.obj);
                             break;
                     }
                 } catch (JSONException e) {
@@ -61,5 +64,6 @@ public class MainActivity extends AppCompatActivity {
 //        NetworkConnectionController.GetSearch_Find(this.mHandler, 1);
         NetworkConnectionController.GetTianYan_Zhida_Information(this.mHandler, 72);
         NetworkConnectionController.api_general_advertise(this.mHandler, 75);
+//        TraderController.GetTraderNewsList();
     }
 }

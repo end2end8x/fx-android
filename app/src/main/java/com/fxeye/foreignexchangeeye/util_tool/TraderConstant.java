@@ -1,0 +1,101 @@
+package com.fxeye.foreignexchangeeye.util_tool;
+
+public class TraderConstant {
+    public static final int ANNOUNCEMENT_TYPE = 10;
+    public static final int BAZAAR_TYPE = 7;
+    public static final int BAZAAR_TYPE_DETAILS = 8;
+    public static final String BTN_NAME_HELP = "智能开户";
+    public static final String BTN_NAME_LIGHTNING = "闪电开户";
+    public static final String BTN_NAME_WEBSITE = "官网开户";
+    public static final String CACHE_LIST_TYPE_NEWS_FOR_FIRST = "trader_news_cache_";
+    public static final int COMPLAOMTS_TYPE = 1;
+    public static final String DATA_QUICK = "data_quick_";
+    public static final int EVIDENCE_TYPE = 1;
+    public static final int GUARANTEE_TYPE = 9;
+    public static final String LONG = "Long_";
+    public static final int NEWS_TYPE = 6;
+    public static final boolean NEWS_TYPE_PUSH = true;
+    @Deprecated
+    public static final String NO_NETWORK_CONTENT = "网络拥堵，信号挤丢了";
+    @Deprecated
+    public static final String NO_REGULATOR_DATA = "暂未查明真实监管信息";
+    @Deprecated
+    public static final String NO_REQUEST_DATA = "暂无相关信息!";
+    @Deprecated
+    public static final String NO_REQUEST_REPORT_DATA = "暂无相关报告";
+    public static final int REGULATOR_BG_COLOR_GRAY = -1084063;
+    public static final int REGULATOR_BG_COLOR_GREEN = -8407207;
+    public static final int REGULATOR_BG_COLOR_REG = -6381150;
+    public static final String REGULATOR_INFORMATION = "regulator_information_code=";
+    public static final String REGULATOR_LIST = "regulator_list";
+    public static final String REGULATOR_TRADER_LIST = "regulator_trader_list_code=";
+    public static final String REGULATOR_TRADER_LIST_COUNT = "regulator_trader_list_code_count";
+    public static final String REGULATOR_TRADER_LIST_TOTAL = "regulator_trader_list_total";
+    public static final int RELATION_TYPE = 5;
+    public static final String REQUESTCOUNT = "15";
+    public static final int REQUEST_CODE_FOR_SCREEN = 6162;
+    public static final int REQUEST_PAGESIZE = 30;
+    public static final String REQUEST_TYPE_TRADER = "1";
+    public static final int REQUSET_STATE_CHAOXIANJINGYING = 517;
+    public static final int REQUSET_STATE_DECK = 405;
+    public static final int REQUSET_STATE_JIANGUANCUNYI = 209;
+    public static final int REQUSET_STATE_JIANGUANZHONG = 600;
+    public static final int REQUSET_STATE_LIANJIANGUAN = 107;
+    public static final int REQUSET_STATE_NO_SUPERVISE = 400;
+    public static final int REQUSET_STATE_OVERRUN_MANAGEMENT = 407;
+    public static final int REQUSET_STATE_REGULATION = 500;
+    public static final int REQUSET_STATE_REGULATION_SUSPECT = 409;
+    public static final int REQUSET_STATE_REGULATION_UNKNOWN = 410;
+    public static final int REQUSET_STATE_STATE_UNKNOW = 0;
+    public static final int REQUSET_STATE_SUPERVISE_LOSE = 404;
+    public static final int REQUSET_STATE_TAOPAI = 205;
+    public static final int REQUSET_STATE_WEISHOUQUAN = 401;
+    public static final int REQUSET_STATE_WEIZHIZHUANGTAI = 0;
+    public static final int REQUSET_STATE_YICHEXIAO = 403;
+    public static final int REQUSET_STATE_YIGUOQI = 408;
+    public static final int REQUSET_STATE_YIQIANTAO = 104;
+    public static final int REQUSET_STATE_YIZHUXIAO = 404;
+    public static final String RESPONSE_STATE_CHAOXIANJINGYING = "超限经营";
+    public static final String RESPONSE_STATE_DECK = "套牌";
+    public static final String RESPONSE_STATE_JIANGUANCUNYI = "监管存疑";
+    public static final String RESPONSE_STATE_JIANGUANZHONG = "监管中";
+    public static final String RESPONSE_STATE_LIANJIANGUAN = "离岸监管";
+    public static final String RESPONSE_STATE_NO_SUPERVISE = "无监管";
+    public static final String RESPONSE_STATE_OVERRUN_MANAGEMENT = "超限经营";
+    public static final String RESPONSE_STATE_REGULATION = "监管中";
+    public static final String RESPONSE_STATE_REGULATION_SUSPECT = "监管存疑";
+    public static final String RESPONSE_STATE_REGULATION_UNKNOWN = "监管不明";
+    public static final String RESPONSE_STATE_SUPERVISE_LOSE = "监管失效";
+    public static final String RESPONSE_STATE_TAOPAI = "套牌";
+    public static final String RESPONSE_STATE_UNKNOW = "未知状态";
+    public static final String RESPONSE_STATE_WEISHOUQUAN = "未授权";
+    public static final String RESPONSE_STATE_WEIZHIZHUANGTAI = "未知状态";
+    public static final String RESPONSE_STATE_YICHEXIAO = "已撤销";
+    public static final String RESPONSE_STATE_YIGUOQI = "已过期";
+    public static final String RESPONSE_STATE_YIQIANTAO = "已潜逃";
+    public static final String RESPONSE_STATE_YIZHUXIAO = "已注销";
+    public static final String SCREENSHOTADCODE = "ScreenshotAdCode";
+    public static final String SCREENSHOTADPATH = "ScreenshotAdPath";
+    public static final String SCREENSHOTAD_PATH_BOTTOM = "bottonUrl";
+    public static final String SCREENSHOTAD_PATH_TOP = "topUrl";
+    public static final String SEARCH_HISTORY_SPLIT = "@d#e%v&e";
+    public static final int START_PAGEINDEX = 1;
+    public static final String TRADER_CODE = "Trader_code  ";
+    public static final String TRADER_IN4 = "Trader_in4 ";
+    public static final String TRADER_NAME = "Trader_name  ";
+    public static final int USER_LOGINED = 15;
+    public static final int USER_UNLOGIN = 8;
+    public static final int USER_VIP = 20;
+    public static final String VIEW_STATUS_TYPE_COMMON = "WikiFX·普通版";
+    public static final String VIEW_STATUS_TYPE_PROFESSION = "WikiFX·专业版";
+    public static final String VIEW_STATUS_TYPE_VIP = "WikiFX·VIP版";
+    public static final String VIEW_TYPE_LIST_BAZAAR = "bazaar";
+    public static final String VIEW_TYPE_LIST_BAZAAR_MY_RELEASE = "bazaar_my_release";
+    public static final String VIEW_TYPE_LIST_NEWS = "news";
+    @Deprecated
+    public static final String WAS_NEW_DATA = "已是最新数据";
+    public static final int WEBSITE_TYPE = 2;
+    public static final int WEBSITE_TYPE_NEW = 12;
+    @Deprecated
+    public static final String WILL_BE_UPDATA = "即将上线，敬请期待";
+}
