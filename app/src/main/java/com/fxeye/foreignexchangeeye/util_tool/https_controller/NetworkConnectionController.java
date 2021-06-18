@@ -10,8 +10,8 @@ import android.util.Base64;
 import android.util.Log;
 
 import com.appsflyer.share.Constants;
-import com.facebook.appevents.internal.ViewHierarchyConstants;
-import com.facebook.internal.ServerProtocol;
+//import com.facebook.appevents.internal.ViewHierarchyConstants;
+//import com.facebook.internal.ServerProtocol;
 import com.fxeye.foreignexchangeeye.MyApplication;
 import com.fxeye.foreignexchangeeye.controller.AboutController;
 import com.fxeye.foreignexchangeeye.controller.BaseController;
@@ -189,6 +189,116 @@ public class NetworkConnectionController extends BaseController {
 
     class MessengerShareContentUtility {
         public static final String MEDIA_IMAGE = "image";
+    }
+
+    class ServerProtocol {
+        private static final String DIALOG_AUTHORITY_FORMAT = "m.%s";
+        public static final String DIALOG_PATH = "dialog/";
+        public static final String DIALOG_PARAM_ACCESS_TOKEN = "access_token";
+        public static final String DIALOG_PARAM_APP_ID = "app_id";
+        public static final String DIALOG_PARAM_AUTH_TYPE = "auth_type";
+        public static final String DIALOG_PARAM_CBT = "cbt";
+        public static final String DIALOG_PARAM_CLIENT_ID = "client_id";
+        public static final String DIALOG_PARAM_CUSTOM_TABS_PREFETCHING = "cct_prefetching";
+        public static final String DIALOG_PARAM_DISPLAY = "display";
+        public static final String DIALOG_PARAM_DISPLAY_TOUCH = "touch";
+        public static final String DIALOG_PARAM_E2E = "e2e";
+        public static final String DIALOG_PARAM_IES = "ies";
+        public static final String DIALOG_PARAM_LEGACY_OVERRIDE = "legacy_override";
+        public static final String DIALOG_PARAM_LOGIN_BEHAVIOR = "login_behavior";
+        public static final String DIALOG_PARAM_REDIRECT_URI = "redirect_uri";
+        public static final String DIALOG_PARAM_RESPONSE_TYPE = "response_type";
+        public static final String DIALOG_PARAM_RETURN_SCOPES = "return_scopes";
+        public static final String DIALOG_PARAM_SCOPE = "scope";
+        public static final String DIALOG_PARAM_SSO_DEVICE = "sso";
+        public static final String DIALOG_PARAM_DEFAULT_AUDIENCE = "default_audience";
+        public static final String DIALOG_PARAM_SDK_VERSION = "sdk";
+        public static final String DIALOG_PARAM_STATE = "state";
+        public static final String DIALOG_PARAM_FAIL_ON_LOGGED_OUT = "fail_on_logged_out";
+        public static final String DIALOG_PARAM_CCT_OVER_LOGGED_OUT_APP_SWITCH = "cct_over_app_switch";
+        public static final String DIALOG_REREQUEST_AUTH_TYPE = "rerequest";
+        public static final String DIALOG_RESPONSE_TYPE_TOKEN_AND_SIGNED_REQUEST =
+                "token,signed_request,graph_domain";
+        public static final String DIALOG_RETURN_SCOPES_TRUE = "true";
+        public static final String DIALOG_REDIRECT_URI = "fbconnect://success";
+        public static final String DIALOG_REDIRECT_CHROME_OS_URI = "fbconnect://chrome_os_success";
+        public static final String DIALOG_CANCEL_URI = "fbconnect://cancel";
+
+        public static final String FALLBACK_DIALOG_PARAM_APP_ID = "app_id";
+        public static final String FALLBACK_DIALOG_PARAM_BRIDGE_ARGS = "bridge_args";
+        public static final String FALLBACK_DIALOG_PARAM_KEY_HASH = "android_key_hash";
+        public static final String FALLBACK_DIALOG_PARAM_METHOD_ARGS = "method_args";
+        public static final String FALLBACK_DIALOG_PARAM_METHOD_RESULTS = "method_results";
+        public static final String FALLBACK_DIALOG_PARAM_VERSION = "version";
+        public static final String FALLBACK_DIALOG_DISPLAY_VALUE_TOUCH = "touch";
+
+        // URL components
+        private static final String GRAPH_VIDEO_URL_FORMAT = "https://graph-video.%s";
+        private static final String GRAPH_URL_FORMAT = "https://graph.%s";
+        private static final String GRAPH_API_VERSION = "v8.0";
+    }
+
+    class ViewHierarchyConstants {
+        public static final String ID_KEY = "id";
+        public static final String CLASS_NAME_KEY = "classname";
+        public static final String CLASS_TYPE_BITMASK_KEY = "classtypebitmask";
+        public static final String TEXT_KEY = "text";
+        public static final String DESC_KEY = "description";
+        public static final String DIMENSION_KEY = "dimension";
+        public static final String IS_USER_INPUT_KEY = "is_user_input";
+        public static final String TAG_KEY = "tag";
+        public static final String CHILDREN_VIEW_KEY = "childviews";
+        public static final String HINT_KEY = "hint";
+        public static final String DIMENSION_TOP_KEY = "top";
+        public static final String DIMENSION_LEFT_KEY = "left";
+        public static final String DIMENSION_WIDTH_KEY = "width";
+        public static final String DIMENSION_HEIGHT_KEY = "height";
+        public static final String DIMENSION_SCROLL_X_KEY = "scrollx";
+        public static final String DIMENSION_SCROLL_Y_KEY = "scrolly";
+        public static final String DIMENSION_VISIBILITY_KEY = "visibility";
+        public static final String TEXT_SIZE = "font_size";
+        public static final String TEXT_IS_BOLD = "is_bold";
+        public static final String TEXT_IS_ITALIC = "is_italic";
+        public static final String TEXT_STYLE = "text_style";
+        public static final String ICON_BITMAP = "icon_image";
+        public static final String INPUT_TYPE_KEY = "inputtype";
+        public static final String IS_INTERACTED_KEY = "is_interacted";
+        public static final String SCREEN_NAME_KEY = "screenname";
+        public static final String VIEW_KEY = "view";
+
+        public static final String ENGLISH = "ENGLISH";
+        public static final String GERMAN = "GERMAN";
+        public static final String SPANISH = "SPANISH";
+        public static final String JAPANESE = "JAPANESE";
+
+        public static final String VIEW_CONTENT = "VIEW_CONTENT";
+        public static final String SEARCH = "SEARCH";
+        public static final String ADD_TO_CART = "ADD_TO_CART";
+        public static final String ADD_TO_WISHLIST = "ADD_TO_WISHLIST";
+        public static final String INITIATE_CHECKOUT = "INITIATE_CHECKOUT";
+        public static final String ADD_PAYMENT_INFO = "ADD_PAYMENT_INFO";
+        public static final String PURCHASE = "PURCHASE";
+        public static final String LEAD = "LEAD";
+        public static final String COMPLETE_REGISTRATION = "COMPLETE_REGISTRATION";
+
+        public static final String BUTTON_TEXT = "BUTTON_TEXT";
+        public static final String PAGE_TITLE = "PAGE_TITLE";
+        public static final String RESOLVED_DOCUMENT_LINK = "RESOLVED_DOCUMENT_LINK";
+        public static final String BUTTON_ID = "BUTTON_ID";
+
+        public static final int TEXTVIEW_BITMASK = 0;
+        public static final int IMAGEVIEW_BITMASK = 1;
+        public static final int BUTTON_BITMASK = 2;
+        public static final int CLICKABLE_VIEW_BITMASK = 5;
+        public static final int REACT_NATIVE_BUTTON_BITMASK = 6;
+        public static final int ADAPTER_VIEW_ITEM_BITMASK = 9;
+        public static final int LABEL_BITMASK = 10;
+        public static final int INPUT_BITMASK = 11;
+        public static final int PICKER_BITMASK = 12;
+        public static final int SWITCH_BITMASK = 13;
+        public static final int RADIO_GROUP_BITMASK = 14;
+        public static final int CHECKBOX_BITMASK = 15;
+        public static final int RATINGBAR_BITMASK = 16;
     }
 
     public static void AddTraderBrowseStatistics(Handler handler, int i, String str) {

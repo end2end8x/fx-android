@@ -54,7 +54,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.7'
 //    implementation 'org.greenrobot:eventbus:3.2.0'
     implementation 'com.alibaba:fastjson:1.1.72.android'
-    implementation 'com.facebook.android:facebook-core:8.2.0'
+//    implementation 'com.facebook.android:facebook-core:8.2.0'
 //    implementation 'com.facebook.android:facebook-share:8.2.0'
 //    implementation 'com.facebook.android:facebook-login:8.2.0'
 //    implementation 'com.facebook.android:facebook-places:4.42.0'

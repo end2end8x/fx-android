@@ -4,10 +4,9 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Handler;
 import android.text.TextUtils;
-
 import com.alibaba.fastjson.JSON;
 import com.appsflyer.share.Constants;
-import com.facebook.internal.ServerProtocol;
+//import com.facebook.internal.ServerProtocol;
 import com.fxeye.foreignexchangeeye.MyApplication;
 import com.fxeye.foreignexchangeeye.entity.international_my.NewUser;
 import com.fxeye.foreignexchangeeye.util_tool.BasicUtils;
@@ -16,11 +15,8 @@ import com.fxeye.foreignexchangeeye.util_tool.UrlUtil;
 import com.fxeye.foreignexchangeeye.util_tool.okhttps.OkHttp;
 import com.fxeye.foreignexchangeeye.util_tool.okhttps.OkHttpUtils;
 import com.google.gson.Gson;
-
 import org.apache.http.message.BasicNameValuePair;
-
 import java.util.ArrayList;
-
 import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 //import cn.jpush.android.api.JThirdPlatFormInterface;
 
@@ -109,6 +105,53 @@ public class UserController {
         public static final String TEXT_EMPHASIS_MARK_CIRCLE = "circle";
         public static final String TEXT_EMPHASIS_MARK_FILLED = "filled";
         public static final String TEXT_EMPHASIS_MARK_OPEN = "open";
+    }
+
+    class ServerProtocol {
+        private static final String DIALOG_AUTHORITY_FORMAT = "m.%s";
+        public static final String DIALOG_PATH = "dialog/";
+        public static final String DIALOG_PARAM_ACCESS_TOKEN = "access_token";
+        public static final String DIALOG_PARAM_APP_ID = "app_id";
+        public static final String DIALOG_PARAM_AUTH_TYPE = "auth_type";
+        public static final String DIALOG_PARAM_CBT = "cbt";
+        public static final String DIALOG_PARAM_CLIENT_ID = "client_id";
+        public static final String DIALOG_PARAM_CUSTOM_TABS_PREFETCHING = "cct_prefetching";
+        public static final String DIALOG_PARAM_DISPLAY = "display";
+        public static final String DIALOG_PARAM_DISPLAY_TOUCH = "touch";
+        public static final String DIALOG_PARAM_E2E = "e2e";
+        public static final String DIALOG_PARAM_IES = "ies";
+        public static final String DIALOG_PARAM_LEGACY_OVERRIDE = "legacy_override";
+        public static final String DIALOG_PARAM_LOGIN_BEHAVIOR = "login_behavior";
+        public static final String DIALOG_PARAM_REDIRECT_URI = "redirect_uri";
+        public static final String DIALOG_PARAM_RESPONSE_TYPE = "response_type";
+        public static final String DIALOG_PARAM_RETURN_SCOPES = "return_scopes";
+        public static final String DIALOG_PARAM_SCOPE = "scope";
+        public static final String DIALOG_PARAM_SSO_DEVICE = "sso";
+        public static final String DIALOG_PARAM_DEFAULT_AUDIENCE = "default_audience";
+        public static final String DIALOG_PARAM_SDK_VERSION = "sdk";
+        public static final String DIALOG_PARAM_STATE = "state";
+        public static final String DIALOG_PARAM_FAIL_ON_LOGGED_OUT = "fail_on_logged_out";
+        public static final String DIALOG_PARAM_CCT_OVER_LOGGED_OUT_APP_SWITCH = "cct_over_app_switch";
+        public static final String DIALOG_REREQUEST_AUTH_TYPE = "rerequest";
+        public static final String DIALOG_RESPONSE_TYPE_TOKEN_AND_SIGNED_REQUEST =
+                "token,signed_request,graph_domain";
+        public static final String DIALOG_RETURN_SCOPES_TRUE = "true";
+        public static final String DIALOG_REDIRECT_URI = "fbconnect://success";
+        public static final String DIALOG_REDIRECT_CHROME_OS_URI = "fbconnect://chrome_os_success";
+        public static final String DIALOG_CANCEL_URI = "fbconnect://cancel";
+
+        public static final String FALLBACK_DIALOG_PARAM_APP_ID = "app_id";
+        public static final String FALLBACK_DIALOG_PARAM_BRIDGE_ARGS = "bridge_args";
+        public static final String FALLBACK_DIALOG_PARAM_KEY_HASH = "android_key_hash";
+        public static final String FALLBACK_DIALOG_PARAM_METHOD_ARGS = "method_args";
+        public static final String FALLBACK_DIALOG_PARAM_METHOD_RESULTS = "method_results";
+        public static final String FALLBACK_DIALOG_PARAM_VERSION = "version";
+        public static final String FALLBACK_DIALOG_DISPLAY_VALUE_TOUCH = "touch";
+
+        // URL components
+        private static final String GRAPH_VIDEO_URL_FORMAT = "https://graph-video.%s";
+        private static final String GRAPH_URL_FORMAT = "https://graph.%s";
+        private static final String GRAPH_API_VERSION = "v8.0";
     }
 
     public static void Is_Chiese_Data(Handler handler, int i) {
