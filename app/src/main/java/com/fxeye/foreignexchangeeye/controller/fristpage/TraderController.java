@@ -40,7 +40,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TraderController extends BaseController {
-    public static void GetTraderSurveys(String code, int index, int size, String countryCode, String lan, Handler handler, int what96) {
+    public static void GetTraderSurveys(String code, int index, int size, String languageCode, String countryCode, Handler handler, int what96) {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new BasicNameValuePair("Action", UrlUtil.GetTraderSurveys));
         arrayList.add(new BasicNameValuePair("code", code));
@@ -51,7 +51,7 @@ public class TraderController extends BaseController {
             arrayList.add(new BasicNameValuePair("size", String.valueOf(size)));
         }
         arrayList.add(new BasicNameValuePair("countryCode", countryCode));
-        arrayList.add(new BasicNameValuePair("lan", lan));
+        arrayList.add(new BasicNameValuePair("lan", languageCode));
         new OkHttp().OkHttpGetMethod(addEncryptionGETPublicParams(arrayList), handler, what96, UrlUtil.TEST_URL);
     }
 
@@ -129,56 +129,56 @@ public class TraderController extends BaseController {
         new OkHttp().OkHttpGetMethod(arrayList, handler, what43, UrlUtil.TRADER_NEWS_LIST);
     }
 
-    public static void getNotice(String str, Handler handler, int i) {
+    public static void getNotice(String tradercode, Handler handler, int i) {
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new BasicNameValuePair("tradercode", str));
+        arrayList.add(new BasicNameValuePair("tradercode", tradercode));
         new OkHttp().OkHttpGetMethod(arrayList, handler, i, UrlUtil.TRADER_FLAGSHIP_NOTICE);
     }
 
-    public static void GetTraderTransfer(String str, Handler handler, int i) {
+    public static void GetTraderTransfer(String code, Handler handler, int i) {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new BasicNameValuePair("Action", UrlUtil.GetTraderTransfer));
-        arrayList.add(new BasicNameValuePair("code", str));
+        arrayList.add(new BasicNameValuePair("code", code));
         new OkHttp().OkHttpGetMethod(addEncryptionGETPublicParams(arrayList), handler, i, UrlUtil.TEST_URL);
     }
 
-    public static void GetTraderEvidence(String str, Handler handler, int i) {
+    public static void GetTraderEvidence(String code, Handler handler, int i) {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new BasicNameValuePair("Action", UrlUtil.GetTraderEvidence));
-        arrayList.add(new BasicNameValuePair("code", str));
+        arrayList.add(new BasicNameValuePair("code", code));
         new OkHttp().OkHttpGetMethod(addEncryptionGETPublicParams(arrayList), handler, i, UrlUtil.TEST_URL);
     }
 
-    public static void GetMT4Items(String str, String str2, String str3, Handler handler, int i) {
+    public static void GetMT4Items(String code, String languageCode, String countryCode, Handler handler, int i) {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new BasicNameValuePair("Action", UrlUtil.GetMT4Items));
-        arrayList.add(new BasicNameValuePair("code", str));
-        arrayList.add(new BasicNameValuePair("languageCode", str2));
-        arrayList.add(new BasicNameValuePair("countryCode", str3));
+        arrayList.add(new BasicNameValuePair("code", code));
+        arrayList.add(new BasicNameValuePair("languageCode", languageCode));
+        arrayList.add(new BasicNameValuePair("countryCode", countryCode));
         new OkHttp().OkHttpGetMethod(addEncryptionGETPublicParams(arrayList), handler, i, UrlUtil.TEST_URL);
     }
 
-    public static void GetTraderAccount(String str, String str2, String str3, Handler handler, int i) {
+    public static void GetTraderAccount(String code, String languageCode, String countryCode, Handler handler, int i) {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new BasicNameValuePair("Action", UrlUtil.GetTraderAccount));
-        arrayList.add(new BasicNameValuePair("code", str));
-        arrayList.add(new BasicNameValuePair("languageCode", str2));
-        arrayList.add(new BasicNameValuePair("countryCode", str3));
+        arrayList.add(new BasicNameValuePair("code", code));
+        arrayList.add(new BasicNameValuePair("languageCode", languageCode));
+        arrayList.add(new BasicNameValuePair("countryCode", countryCode));
         new OkHttp().OkHttpGetMethod(addEncryptionGETPublicParams(arrayList), handler, i, UrlUtil.TEST_URL);
     }
 
-    public static void GetTraderComplaint(String str, Handler handler, int i) {
+    public static void GetTraderComplaint(String code, Handler handler, int i) {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new BasicNameValuePair("Action", UrlUtil.GetTraderComplaint));
-        arrayList.add(new BasicNameValuePair("code", str));
+        arrayList.add(new BasicNameValuePair("code", code));
         new OkHttp().OkHttpGetMethod(addEncryptionGETPublicParams(arrayList), handler, i, UrlUtil.TEST_URL);
     }
 
-    public static void GetTraderDomain(String str, String str2, Handler handler, int i) {
+    public static void GetTraderDomain(String code, String languageCode, Handler handler, int i) {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new BasicNameValuePair("Action", UrlUtil.GetTraderDomain));
-        arrayList.add(new BasicNameValuePair("code", str));
-        arrayList.add(new BasicNameValuePair("languageCode", str2));
+        arrayList.add(new BasicNameValuePair("code", code));
+        arrayList.add(new BasicNameValuePair("languageCode", languageCode));
         new OkHttp().OkHttpGetMethod(addEncryptionGETPublicParams(arrayList), handler, i, UrlUtil.TEST_URL);
     }
 
