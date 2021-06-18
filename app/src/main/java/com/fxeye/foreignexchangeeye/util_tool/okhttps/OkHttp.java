@@ -3,12 +3,17 @@ package com.fxeye.foreignexchangeeye.util_tool.okhttps;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+
 import org.apache.http.NameValuePair;
+
 import java.io.IOException;
 import java.util.List;
+
 import okhttp3.Request;
 
 public class OkHttp {
+    private static final String TAG = "OkHttp";
+
     public void OkHttpGetMethod(List<NameValuePair> list, final Handler handler, final int i, String str) {
         OkHttpClientManager.getAsyn(str, new OkHttpClientManager.StringCallback() {
             public void onFailure(Request request, IOException iOException) {
@@ -17,11 +22,11 @@ public class OkHttp {
                 message.what = -i;
                 message.obj = iOException.toString();
                 handler.sendMessage(message);
-                Log.e("test", "result fail");
+                Log.e(TAG, "result fail");
             }
 
             public void onResponse(String str) {
-                Log.i("test", "OkHttpGetMethod onResponse length " + str.length());
+                Log.i(TAG, "OkHttpGetMethod onResponse length " + str.length());
                 Message message = new Message();
                 message.obj = str;
                 message.what = i;

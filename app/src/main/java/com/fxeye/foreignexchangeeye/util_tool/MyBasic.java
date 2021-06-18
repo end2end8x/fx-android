@@ -1,8 +1,10 @@
 package com.fxeye.foreignexchangeeye.util_tool;
 
 import android.content.Context;
+
 import com.fxeye.foreignexchangeeye.controller.UserController;
 import com.libs.view.optional.anaother.ConstDefine;
+
 import org.json.JSONObject;
 
 public class MyBasic {

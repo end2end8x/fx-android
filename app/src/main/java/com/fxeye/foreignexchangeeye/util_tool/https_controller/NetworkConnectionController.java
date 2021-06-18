@@ -1,6 +1,7 @@
 package com.fxeye.foreignexchangeeye.util_tool.https_controller;
 
 //import Decoder.BASE64Encoder;
+
 import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
@@ -8,13 +9,9 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
 
-import androidx.annotation.Nullable;
-
 import com.appsflyer.share.Constants;
 import com.facebook.appevents.internal.ViewHierarchyConstants;
 import com.facebook.internal.ServerProtocol;
-//import com.facebook.places.model.PlaceFields;
-//import com.facebook.share.internal.MessengerShareContentUtility;
 import com.fxeye.foreignexchangeeye.MyApplication;
 import com.fxeye.foreignexchangeeye.controller.AboutController;
 import com.fxeye.foreignexchangeeye.controller.BaseController;
@@ -31,22 +28,22 @@ import com.fxeye.foreignexchangeeye.util_tool.okhttps.OkHttp;
 import com.fxeye.foreignexchangeeye.util_tool.okhttps.OkHttpClientManager;
 import com.fxeye.foreignexchangeeye.util_tool.okhttps.OkHttpUtils;
 import com.fxeye.foreignexchangeeye.view.im_chatutils.IMOkHttpRequestManager;
-//import com.huawei.hms.support.api.entity.hwid.HwIDConstant;
-//import com.huawei.hms.support.api.entity.pay.HwPayConstant;
 import com.wiki.exposure.framework.utils.LanguageType;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
+
 import okhttp3.Request;
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-//import cn.jpush.android.api.JThirdPlatFormInterface;
 import tv.danmaku.ijk.media.player.IjkMediaMeta;
 import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 //import com.google.android.exoplayer2.text.ttml.TtmlDecoder.*;

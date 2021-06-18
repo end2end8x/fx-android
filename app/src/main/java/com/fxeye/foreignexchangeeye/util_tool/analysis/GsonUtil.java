@@ -1,9 +1,11 @@
 package com.fxeye.foreignexchangeeye.util_tool.analysis;
 
 import android.util.Log;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
